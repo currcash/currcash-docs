@@ -1,0 +1,81 @@
+---
+// ___ $ Components ___
+import SideBarList from './SideBarList.astro'
+import SideBarElement from './SideBarElement.astro'
+import SideBarSeparator from './SideBarSeparator.astro'
+import SideBarFooter from './SideBarFooter.astro'
+
+// ___ $ Interfaces ___
+import type IList from '@interfaces/components/SideBar/IList'
+import type IBrand from '@interfaces/components/SideBar/IBrand'
+
+// ___ $ Utilities ___
+import { isNull, existsArray } from '@utilities/funcs'
+import RenderSubLists from '@utilities/components/SideBar/RenderSubLists.astro'
+import RenderElements from '@utilities/components/SideBar/RenderElements.astro'
+import SideBarBrand from './SideBarBrand.astro'
+
+// ___ $ Props ___
+export interface Props extends IBrand {
+  data: IList[]
+}
+
+const { release, data } = Astro.props
+---
+
+{/** Side Bar */}
+<div class='sidebar'>
+  <SideBarBrand release={release} />
+  <SideBarSeparator />
+
+  {
+    data.map(({ title, link, isOpen, elements, sublists }: IList) => {
+      {/* ___ $ Simple Validation ___ */}
+      const isElements = !isNull(elements) && existsArray(elements ?? [])
+      const isSublists = !isNull(sublists) && existsArray(sublists ?? [])
+      {/* Only elements */}
+      if (isElements && !isSublists) {
+        return (
+          <SideBarList title={title} isOpen={isOpen}>
+            <RenderElements elements={elements ?? []} />
+          </SideBarList>
+        )
+      }
+      {/* Only link */}
+      if (!isElements && !isSublists) {
+        return (
+          <SideBarElement
+            endpoint={link?.endpoint ?? '#'}
+            title={title}
+            target={link?.target}
+            isLink={true}
+          />
+        )
+      }
+      {/* Sublists and elements. NOTE: if (elements) then (show sublist) */}
+      return (
+        <SideBarList title={title} isOpen={isOpen}>
+          {/** Elements */}
+          <RenderElements elements={elements ?? []} />
+
+          {/** Sublists */}
+          <RenderSubLists sublists={sublists ?? []} />
+        </SideBarList>
+      )
+    })
+  }
+
+  <SideBarSeparator />
+  <SideBarFooter />
+</div>
+
+<style>
+  .sidebar {
+    height: 100vh;
+    width: 17rem;
+    padding: 1.5rem 1.2rem 1.2rem 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    outline: none;
+  }
+</style>

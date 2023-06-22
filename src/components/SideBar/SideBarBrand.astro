@@ -1,0 +1,48 @@
+---
+// ___ $ Interfaces ___
+import type IBrand from '@interfaces/components/SideBar/IBrand'
+
+// ___ $ Props ___
+export interface Props extends IBrand {}
+const { release } = Astro.props
+
+// ___ $ Simple Validation ___
+const isRelease = release && release !== ''
+---
+
+{/** Side Bar - Brand */}
+<a href='/' class='title' target='_self' draggable='false'>
+  <img
+    src='/svg/logo.svg'
+    class='logo'
+    alt='logo'
+    draggable='false'
+  />
+  <span>Currcash</span>
+
+  {isRelease && <small class='release'>v{release}</small>}
+</a>
+
+<style>
+  .title {
+    width: 100%;
+    font-family: var(--bold-font);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: bold;
+    gap: 0.7rem;
+    outline: none;
+  }
+  .logo {
+    height: 2.5em;
+    user-select: none;
+  }
+  .release {
+    color: var(--black);
+    margin: 0 0 0 0.4rem;
+    font-size: 0.65em;
+    letter-spacing: 0.4px;
+  }
+</style>

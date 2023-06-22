@@ -1,0 +1,19 @@
+<span class='relevant_text'><slot /></span>
+
+<style>
+  .relevant_text {
+    font-family: 'Roboto Italic';
+    position: relative;
+    color: var(--special-red);
+    /* border-top: 1px solid black; */
+  }
+  .relevant_text::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 1.3px;
+    width: 100%;
+    top: 88%;
+    background-color: var(--special-red);
+  }
+</style>

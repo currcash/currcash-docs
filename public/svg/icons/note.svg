@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <g id="note" transform="translate(-48 -48)">
+    <g id="Grupo_1" data-name="Grupo 1">
+      <path id="Trazado_1" data-name="Trazado 1" d="M248,64C146.39,64,64,146.39,64,248s82.39,184,184,184,184-82.39,184-184S349.61,64,248,64Z" fill="none" stroke="#193c47" stroke-miterlimit="10" stroke-width="32"/>
+      <path id="Trazado_2" data-name="Trazado 2" d="M220,220h32V336" fill="none" stroke="#193c47" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+      <path id="Trazado_3" data-name="Trazado 3" d="M208,340h88" fill="none" stroke="#193c47" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"/>
+      <path id="Trazado_4" data-name="Trazado 4" d="M248,130a26,26,0,1,0,26,26A26,26,0,0,0,248,130Z" fill="#193c47"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+/** From the <h1> */
+.global_title {
+  font-size: 2.5em;
+  letter-spacing: 1.2px;
+}
+
+/** For the <a> */
+.link,
+.sidebar_link {
+  transition: opacity 650ms ease;
+}
+.link:hover {
+  opacity: 0.8;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.code_bg {
+  display: block;
+  width: max-content;
+  padding: 0.2rem 1rem;
+  margin: 0.5rem 0 0 0;
+  border-radius: 8px;
+  background-color: var(--light-v2);
+}

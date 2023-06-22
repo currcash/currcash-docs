@@ -1,0 +1,16 @@
+/** Gradients Colors */
+.gradient_bg {
+  background: rgb(207, 208, 209);
+  background: linear-gradient(
+    320deg,
+    rgb(236, 184, 182) 0%,
+    rgb(189, 225, 241) 100%
+  );
+}
+
+.gradient_text {
+  background: #e44164;
+  background: linear-gradient(to right, #e44164 0%, #3b58d6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

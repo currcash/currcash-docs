@@ -1,0 +1,52 @@
+---
+// ___ $ Components ___
+import ReleaseTitle from './ReleaseTitle.astro'
+import ReleaseSubtitle from './ReleaseSubtitle.astro'
+import ReleaseElementType from './ReleaseElementType.astro'
+
+// ___ $ Interfaces ___
+import type IReleaseHead from '@interfaces/components/Release/IReleaseHead'
+import type IReleaseText from '@interfaces/components/Release/IReleaseText'
+import type IReleaseElementType from '@interfaces/components/Release/IReleaseElementType'
+
+// ___ $ Props ___
+export interface Props
+  extends IReleaseHead,
+    IReleaseText,
+    IReleaseElementType {}
+
+const { isTitle, classElementType, elementType, text, isGradient } = Astro.props
+---
+
+<div class='release_head'>
+  {
+    classElementType && elementType && (
+      <ReleaseElementType
+        classElementType={classElementType}
+        elementType={elementType}
+      />
+    )
+  }
+  {
+    isTitle ? (
+      isGradient ? (
+        <ReleaseTitle text={text} isGradient={true} />
+      ) : (
+        <ReleaseTitle text={text} />
+      )
+    ) : isGradient ? (
+      <ReleaseSubtitle text={text} isGradient={true} />
+    ) : (
+      <ReleaseSubtitle text={text} />
+    )
+  }
+</div>
+
+<style>
+  .release_head {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+</style>

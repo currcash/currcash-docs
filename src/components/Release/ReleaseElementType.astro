@@ -1,0 +1,40 @@
+---
+// ___ $ Interfaces ___
+import type IReleaseElementType from '@interfaces/components/Release/IReleaseElementType'
+
+// ___ $ Props ___
+export interface Props extends IReleaseElementType {}
+const { classElementType, elementType } = Astro.props
+---
+
+<span class={`release_element_type release_element_type_${classElementType}`}>
+  {elementType}</span
+>
+
+<style>
+  .release_element_type {
+    padding: 0.45rem;
+    font-size: 0.85em;
+    font-family: 'Consolas', sans-serif;
+    font-style: italic;
+    color: #ebebec;
+    border-radius: 20px;
+    user-select: none;
+  }
+
+  /** Class */
+  .release_element_type_class {
+    background-color: var(--type-class);
+  }
+  .release_element_type_method {
+    background-color: var(--type-method);
+  }
+  .release_element_type_static {
+    background-color: var(--type-static);
+  }
+
+  /** Module */
+  .release_element_type_module {
+    background-color: var(--type-module);
+  }
+</style>

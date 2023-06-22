@@ -1,0 +1,72 @@
+---
+// ___ $ Interfaces ___
+import type ILink from '@interfaces/components/SideBar/ILink'
+
+// ___ $ Props ___
+export interface Props extends ILink {
+  title: string
+  isLink: boolean
+}
+
+const { endpoint, title, target, isLink } = Astro.props
+---
+
+{/** Side Bar - Link */}
+
+{
+  isLink && (
+    <a
+      href={endpoint}
+      class='sidebar_link only_link'
+      target={target ? target : '_self'}
+      draggable='false'
+    >
+      $ {title}
+    </a>
+  )
+}
+
+{/** Side Bar - Element + Link */}
+
+{
+  !isLink && (
+    <li class='sidebar_element' draggable='false'>
+      <a
+        href={endpoint}
+        class='sidebar_link'
+        target={target ? target : '_self'}
+      >
+        {title}
+      </a>
+    </li>
+  )
+}
+
+<style>
+  .only_link::first-letter {
+    font-size: 0.9em;
+    color: var(--green);
+  }
+
+  .sidebar_element,
+  .sidebar_link {
+    width: 100%;
+    outline: none;
+  }
+
+  .sidebar_element {
+    font-family: var(--light-font);
+    margin: 0.5rem 0 0 0;
+    list-style: none;
+  }
+
+  .sidebar_link {
+    margin: 1rem 0 0 0;
+    color: grey;
+    transition: color 300ms ease;
+    display: block;
+  }
+  .sidebar_link:is(:hover, :active) {
+    color: #414141;
+  }
+</style>

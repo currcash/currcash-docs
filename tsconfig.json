@@ -1,0 +1,35 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "importsNotUsedAsValues": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      "@common/*": [
+        "src/common/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@signals/*": [
+        "src/signals/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ],
+      "@utilities/*": [
+        "src/utilities/*"
+      ]
+    }
+  }
+}

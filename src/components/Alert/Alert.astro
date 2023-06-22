@@ -1,0 +1,138 @@
+---
+// ___ $ Common Components ___
+import Icon from '@common/Icon'
+
+// ___ $ Interfaces ___
+import type IAlert from '@interfaces/components/Alert/IAlert'
+
+// ___ $ Variables ___
+const allowedTypes = ['tip', 'caution', 'warning', 'note']
+
+// ___ $ Props ___
+export interface Props extends IAlert {}
+let { type } = Astro.props
+const { message } = Astro.props
+
+type = type.toLowerCase()
+---
+
+{
+  allowedTypes.includes(type) && (
+    <div class={`alert ${type}_alert`}>
+      <div class={`content_alert ${type}_content_alert`}>
+        {/* Title Container */}
+        <div class={`title_alert_container ${type}_foreground`}>
+          <Icon name={type} className='icon' />
+          <span class={`title_alert ${type}_foreground`}>{type}</span>
+        </div>
+        {/* Message */}
+        <span class={`message_alert ${type}_foreground`}>{message}</span>
+      </div>
+    </div>
+  )
+}
+
+<style>
+  .alert {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    margin: 0.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: none;
+    border-radius: 8px;
+  }
+  .alert::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 5px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 2px;
+  }
+  .content_alert {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: start;
+    gap: 0.8rem;
+    background: transparent;
+  }
+  .icon {
+    font-size: 1.38em;
+  }
+  .title_alert_container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 0.2rem;
+    color: var(--dark);
+  }
+  .title_alert,
+  .message_alert {
+    color: var(--dark);
+  }
+  .title_alert {
+    font-family: var(--bold-font);
+    font-size: 0.86em;
+    text-transform: uppercase;
+  }
+  .message_alert {
+    font-size: 1em;
+    word-spacing: 1.5px;
+    line-height: 1.28;
+    font-family: var(--light-font);
+  }
+
+  /** Tip */
+  .tip_alert {
+    background-color: var(--tip-background-alert);
+  }
+  .tip_alert::before {
+    background-color: var(--tip-vertical_line-alert);
+  }
+  .tip_foreground {
+    color: var(--tip-foreground-alert);
+  }
+
+  /** Caution */
+  .caution_alert {
+    background-color: var(--caution-background-alert);
+  }
+  .caution_alert::before {
+    background-color: var(--caution-vertical_line-alert);
+  }
+  .caution_foreground {
+    color: var(--caution-foreground-alert);
+  }
+
+  /** Warning */
+  .warning_alert {
+    background-color: var(--warning-background-alert);
+  }
+  .warning_alert::before {
+    background-color: var(--warning-vertical_line-alert);
+  }
+  .warning_foreground {
+    color: var(--warning-foreground-alert);
+  }
+
+  /** Note */
+  .note_alert {
+    background-color: var(--note-background-alert);
+  }
+  .note_alert::before {
+    background-color: var(--note-vertical_line-alert);
+  }
+  .note_foreground {
+    color: var(--note-foreground-alert);
+  }
+</style>

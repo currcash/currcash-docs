@@ -1,0 +1,63 @@
+---
+/* -------------------------------- *
+ *   --- $ Page: Introduction ---   *
+ * -------------------------------- */
+
+// ___ $ Layouts ___
+import Layout from '@layouts/Layout.astro'
+
+// ___ $ Common Components ___
+import Container from '@common/Container.astro'
+import Stylesheet from '@common/Stylesheet.astro'
+
+// ___ $ Components ___
+import PackageManagerSelector from '@components/PackageManagerSelector/PackageManagerSelector'
+import RelevantText from '@components/RelevantText/RelevantText.astro'
+
+// ___ $ Data ___
+import sideBarData from '@data/Main/SideBar/main.data'
+---
+
+<Layout isSideBar={true} windowTitle='Get Started' data={sideBarData}>
+  {/* Stylesheets */}
+  <Stylesheet path='components/packageManagerSelector.css' slot='head' />
+
+  <Container isGradientBg={true}>
+    <h1 class='global_title gradient_text'>
+      • Get started with Currcash
+    </h1>
+
+    <p class='main_text'>
+      Is a library based on
+      <a
+        class='link_to gradient_text'
+        href='https://github.com/MikeMcl/decimal.js-light'
+        target='_blank'
+      >
+        decimal.js-light
+      </a> which allows developers to take a weight off their shoulders when trying
+      to work with <RelevantText>decimal points</RelevantText> in JavaScript.
+    </p>
+
+    <h2 class='subtitle gradient_text'>• Installation</h2>
+    <p>Choose a package 📦 manager to continue.</p>
+
+    <PackageManagerSelector className='package_container' client:load />
+  </Container>
+</Layout>
+
+<style>
+  .main_text {
+    font-family: var(--light-font);
+    font-size: 1.26em;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+    padding: 0;
+  }
+  .subtitle {
+    margin: 1rem 0 1rem 0;
+  }
+  .link_to {
+    font-family: var(--default-font);
+  }
+</style>

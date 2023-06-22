@@ -1,0 +1,44 @@
+---
+export interface Props {
+  title: string
+  isOpen: boolean
+}
+
+// ___ $ Props ___
+const { title, isOpen } = Astro.props
+---
+
+{/** Side Bar - List */}
+<details class='sidebar_details' open={isOpen}>
+  <summary>{title}</summary>
+  <ul class='sidebar_list'>
+    <slot />
+  </ul>
+</details>
+
+<style>
+  .sidebar_details {
+    width: 100%;
+    margin: 1.2rem 0 1.2rem 0;
+    font-weight: 450;
+    color: grey;
+    transition: color 300ms ease;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+  }
+  .sidebar_details:last-child {
+    margin: 0 0 2rem 0;
+  }
+  .sidebar_details:is(:hover, :focus-within) {
+    color: #414141;
+  }
+
+  .sidebar_list {
+    width: 100%;
+    margin: 1rem 0 0 0;
+    padding: 0 0 0 1.2rem;
+    list-style: none;
+    outline: none;
+  }
+</style>

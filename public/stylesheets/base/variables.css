@@ -1,0 +1,42 @@
+:root {
+  /* Fonts */
+  --default-font: 'Roboto', sans-serif;
+  --light-font: 'Roboto Light', sans-serif;
+  --bold-font: 'Roboto Bold', sans-serif;
+  --black-font: 'Roboto Black', sans-serif;
+
+  /* Colors */
+  --black: #000000;
+  --dark: #303a42;
+  --white: #ffffff;
+  --light: #ececec;
+  --light-v2: rgba(255, 255, 255, 0.6);
+  --special-red: #b63b56;
+  --red: #ac1850;
+  --green: #40b370;
+
+  /** Docs => Colors */
+
+  /** Alert => Colors */
+  --tip-background-alert: #e6f6e6;
+  --tip-vertical_line-alert: #009400;
+  --tip-foreground-alert: #003100;
+
+  --caution-background-alert: #fff8e6;
+  --caution-vertical_line-alert: #e6a700;
+  --caution-foreground-alert: #4d3800;
+
+  --warning-background-alert: #ffebec;
+  --warning-vertical_line-alert: #e13238;
+  --warning-foreground-alert: #4b1113;
+
+  --note-background-alert: #eef9fd;
+  --note-vertical_line-alert: #4cb3d4;
+  --note-foreground-alert: #193c47;
+
+  /** Release Element Type => Colors */
+  --type-class: #c52b2b;
+  --type-method: #db8b3f;
+  --type-static: #96989b;
+  --type-module: #41ac91;
+}

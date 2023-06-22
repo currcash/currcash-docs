@@ -1,0 +1,20 @@
+---
+// ___ $ Interfaces ___
+import type IStylesheet from '@interfaces/common/IStylesheet'
+
+// ___ $ Props ___
+export interface Props extends IStylesheet {}
+const { rel, path, type } = Astro.props
+---
+
+{
+  type && (
+    <link
+      rel={rel ? rel : 'stylesheet'}
+      href={`/stylesheets/${path}`}
+      type={type}
+    />
+  )
+}
+
+{!type && <link rel={rel ? rel : 'stylesheet'} href={`/stylesheets/${path}`} />}

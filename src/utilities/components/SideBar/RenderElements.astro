@@ -1,0 +1,25 @@
+---
+// ___ $ Components ___
+import SideBarElement from '@components/SideBar/SideBarElement.astro'
+
+// ___ $ Interfaces ___
+import type IElement from '@interfaces/components/SideBar/IElement'
+
+// ___ $ Props ___
+export interface Props {
+  elements: IElement[]
+}
+
+const { elements } = Astro.props
+---
+
+{
+  elements.map(({ endpoint, title }: IElement) => (
+    <SideBarElement
+      endpoint={endpoint ?? '#'}
+      title={title}
+      isLink={false}
+      target='_self'
+    />
+  ))
+}

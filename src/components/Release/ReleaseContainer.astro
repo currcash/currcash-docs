@@ -1,0 +1,30 @@
+---
+// ___ $ Interfaces ___
+import type IReleaseContainer from '@interfaces/components/Release/IReleaseContainer'
+
+// ___ $ Props ___
+export interface Props extends IReleaseContainer {}
+const { id } = Astro.props
+---
+
+{
+  id && (
+    <div class='release_container' id={id}>
+      <slot />
+    </div>
+  )
+}
+{
+  !id && (
+    <div class='release_container'>
+      <slot />
+    </div>
+  )
+}
+
+<style>
+  .release_container {
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
+</style>

@@ -1,0 +1,56 @@
+:is(.packageManagerSelector, .packageManagerSelectorIcons) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 9px;
+  outline: none;
+}
+
+.packageManagerSelector {
+  height: 6rem;
+  background-color: #dfd5d5;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.packageManagerSelectorIcons {
+  height: 2rem;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 0.5rem 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+:is(.npm, .yarn, .pnpm) {
+  height: 1.5rem;
+  width: 1.5rem;
+  font-size: 0.2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* .npm {
+  color: var(--red);
+}
+.yarn {
+  color: #509adf;
+} */
+
+.packageManagerSelectorCode {
+  font-family: 'Consolas', sans-serif;
+}
+.packageManagerSelectorCode::before {
+  content: '$ ';
+  color: var(--green);
+}
+
+.package_container {
+  width: 100%;
+  margin: 0.6rem 0;
+  text-align: center;
+  background-color: #f3dfdf;
+}

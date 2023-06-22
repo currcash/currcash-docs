@@ -1,0 +1,154 @@
+---
+/* ------------------------ *
+ *  --- $ Page: Home ---   *
+ * ------------------------ */
+// ___ $ @preact ___
+import { signal } from '@preact/signals'
+
+// ___ $ Layouts ___
+import Layout from '@layouts/Layout.astro'
+
+// ___ $ Common Components ___
+import Container from '@common/Container.astro'
+import Stylesheet from '@common/Stylesheet.astro'
+import Icon from '@common/Icon'
+
+// ___ $ Components ___
+import PackageManagerSelector from '@components/PackageManagerSelector/PackageManagerSelector'
+
+// ___ $ Data ___
+import sideBarData from '@data/Main/SideBar/main.data'
+---
+
+<Layout windowTitle='Home' isSideBar={true} data={sideBarData}>
+  {/* Stylesheets */}
+  <Stylesheet path='components/packageManagerSelector.css' slot='head' />
+
+  <Container isGradientBg={true}>
+    <div class='container'>
+      <img
+        src='/svg/logo.svg'
+        class='logo_index_page'
+        alt='logo'
+        draggable='false'
+      />
+      <h1 class='global_title title gradient_text'>Currcash</h1>
+
+      <p class='description'>
+        Working with the prices of your systems had not been so easy. Forget
+        about the problems with <span class='underline'>decimals</span> in JavaScript
+        and start bringing our library to your projects.
+      </p>
+
+      {/* Container => npm & link */}
+      <div class='last_container' translate='no'>
+        <PackageManagerSelector client:load />
+
+        <a
+          href='/releases/v1.0.0/class'
+          class='link docs_link'
+          target='_self'
+          draggable='false'
+        >
+          <Icon name='document' className='document_icon' title='Docs' /> Docs
+        </a>
+      </div>
+
+      {/* Currently version */}
+      <small class='currently_version'
+        >Currently <span class='currently_version_number'>v1.0.0</span></small
+      >
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  .container {
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .logo_index_page {
+    height: 8em;
+  }
+
+  .title,
+  .description {
+    text-align: center;
+  }
+
+  .document_icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: var(--light);
+  }
+
+  .title {
+    font-size: 3.3em;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.2;
+  }
+
+  .description {
+    font-size: 1.4em;
+    padding: 0 5em;
+    word-spacing: 1.2px;
+    font-family: var(--italic-font);
+    color: #857186;
+    line-height: 1.25;
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-position: 10px;
+    text-decoration-color: #9176c2;
+  }
+
+  .last_container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.12rem;
+  }
+
+  .docs_link {
+    height: 3.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--red);
+    color: var(--light);
+    font-family: var(--default-font);
+    border-radius: 9px;
+    border: none;
+    outline: none;
+  }
+  .docs_link:hover {
+    opacity: 0.9;
+  }
+
+  .currently_version {
+    width: 100%;
+    font-family: var(--light-font);
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 1rem 0 0;
+    font-size: 0.9em;
+  }
+  .currently_version_number {
+    font-family: var(--default-font);
+    font-weight: 500;
+  }
+</style>

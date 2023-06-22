@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="352" height="448" viewBox="0 0 352 448">
+  <g id="Grupo_1" data-name="Grupo 1" transform="translate(-80 -32)">
+    <path id="Trazado_3" data-name="Trazado 3" d="M0,0H157V398H0Z" transform="translate(105 55)" fill="#fff"/>
+    <rect id="Rectángulo_2" data-name="Rectángulo 2" width="153" height="229" rx="29" transform="translate(147 55)" fill="#fff"/>
+    <rect id="Rectángulo_3" data-name="Rectángulo 3" width="153" height="229" rx="29" transform="translate(188 109)" fill="#fff"/>
+    <rect id="Rectángulo_4" data-name="Rectángulo 4" width="153" height="229" rx="29" transform="translate(235 150)" fill="#fff"/>
+    <rect id="Rectángulo_5" data-name="Rectángulo 5" width="180" height="247" rx="29" transform="translate(235 208)" fill="#fff"/>
+    <g id="document">
+      <path id="Trazado_1" data-name="Trazado 1" d="M416,221.25V416a48,48,0,0,1-48,48H144a48,48,0,0,1-48-48V96a48,48,0,0,1,48-48h98.75a32,32,0,0,1,22.617,9.367L406.63,198.63A32,32,0,0,1,416,221.25Z" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="32"/>
+      <path id="Trazado_2" data-name="Trazado 2" d="M256,56V176a32,32,0,0,0,32,32H408M176,288H336M176,368H336" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+    </g>
+  </g>
+</svg>

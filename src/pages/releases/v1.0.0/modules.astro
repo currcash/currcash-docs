@@ -1,0 +1,211 @@
+---
+// ___ $ @astro ___
+import { Prism } from '@astrojs/prism'
+
+// ___ $ Layouts ___
+import Layout from '@layouts/Layout.astro'
+
+// ___ $ Common Components ___
+import Stylesheet from '@common/Stylesheet.astro'
+import Container from '@common/Container.astro'
+
+// ___ $ Components ___
+import ReleaseContainer from '@components/Release/ReleaseContainer.astro'
+import ReleaseHead from '@components/Release/ReleaseHead.astro'
+
+// ___ $ Data ___
+import sideBarData from '@data/Releases/SideBar/v1.0.0/modules.data'
+import ReleaseDescription from '@components/Release/ReleaseDescription.astro'
+---
+
+<Layout
+  windowTitle='Modules v1.0.0'
+  isSideBar={true}
+  data={sideBarData}
+  release='1.0.0'
+>
+  {/* Stylesheets */}
+  <Stylesheet path='themes/prism-light.css' slot='head' />
+
+  <Container isGradientBg={true}>
+    {/* Started */}
+    <ReleaseContainer id='Modules'>
+      <ReleaseHead isTitle={true} text='Modules' isGradient={true} />
+    </ReleaseContainer>
+
+    {/* Modules */}
+    {/* Add */}
+    <ReleaseContainer id='Add'>
+      <ReleaseHead
+        isTitle={false}
+        text='Add'
+        classElementType='module'
+        elementType='Module'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'>Param: Values
+          <span class='gradient_text'>{''}=&gt; number[]</span>
+        </code>
+        <code class='code_bg'>Return
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={
+          `import { add } from 'currcash';\n\n` +
+          `const total = add([5, 15, 5, 25]);\n\n` +
+          `console.log('total:', total); // 50\n`
+        }
+      />
+    </ReleaseContainer>
+
+    {/* Sub */}
+    <ReleaseContainer id='Sub'>
+      <ReleaseHead
+        isTitle={false}
+        text='Sub'
+        classElementType='module'
+        elementType='Module'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'>Param: Values
+          <span class='gradient_text'>{''}=&gt; number[]</span>
+        </code>
+        <code class='code_bg'>Return
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={
+          `import { sub } from 'currcash';\n\n` +
+          `const total = sub([2, 2]);\n\n` +
+          `console.log('total:', total); // 0\n`
+        }
+      />
+    </ReleaseContainer>
+
+    {/* Multiply */}
+    <ReleaseContainer id='Multiply'>
+      <ReleaseHead
+        isTitle={false}
+        text='Multiply'
+        classElementType='module'
+        elementType='Module'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'>Param: Values
+          <span class='gradient_text'>{''}=&gt; number[]</span>
+        </code>
+        <code class='code_bg'>Return
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={
+          `import { multiply } from 'currcash';\n\n` +
+          `const total = multiply([4, 4, 4]);\n\n` +
+          `console.log('total:', total); // 64\n`
+        }
+      />
+    </ReleaseContainer>
+
+    {/* Divide */}
+    <ReleaseContainer id='Divide'>
+      <ReleaseHead
+        isTitle={false}
+        text='Divide'
+        classElementType='module'
+        elementType='Module'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'>Param: Values
+          <span class='gradient_text'>{''}=&gt; number[]</span>
+        </code>
+        <code class='code_bg'>Return
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={
+          `import { divide } from 'currcash';\n\n` +
+          `const total = divide([12, 0.48]);\n\n` +
+          `console.log('total:', total); // 25\n`
+        }
+      />
+    </ReleaseContainer>
+
+    {/* Is Integer */}
+    <ReleaseContainer id='isInteger'>
+      <ReleaseHead
+        isTitle={false}
+        text='isInteger'
+        classElementType='module'
+        elementType='Module'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'>Param: Value
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+        <code class='code_bg'>Return
+          <span class='gradient_text'>{''}=&gt; bool</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={
+          `import { isInteger } from 'currcash';\n\n` +
+          `const condition = isInteger(356);\n\n` +
+          `console.log('condition:', condition); // true\n`
+        }
+      />
+    </ReleaseContainer>
+
+    {/* Is Decimal */}
+    <ReleaseContainer id='isDecimal'>
+      <ReleaseHead
+        isTitle={false}
+        text='isDecimal'
+        classElementType='module'
+        elementType='Module'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'>Param: Value
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+        <code class='code_bg'>Return
+          <span class='gradient_text'>{''}=&gt; bool</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={
+          `import { isDecimal } from 'currcash';\n\n` +
+          `const condition = isDecimal(149.99);\n\n` +
+          `console.log('condition:', condition); // true\n`
+        }
+      />
+    </ReleaseContainer>
+  </Container>
+</Layout>

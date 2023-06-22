@@ -1,0 +1,17 @@
+---
+// ___ $ Intefaces ___
+import type IReleaseText from '@interfaces/components/Release/IReleaseText'
+
+// ___ $ Props ___
+export interface Props extends IReleaseText {}
+const { text, isGradient } = Astro.props
+---
+
+{isGradient && <h2 class='release_subtitle gradient_text'>{text}</h2>}
+{!isGradient && <h2 class='release_subtitle'>{text}</h2>}
+
+<style>
+  .release_subtitle {
+    color: var(--dark);
+  }
+</style>

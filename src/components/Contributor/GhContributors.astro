@@ -1,0 +1,41 @@
+---
+// ___ $ Components ___
+import Contributor from './Contributor.astro'
+
+// ___ $ Intefaces ___
+import type IContributor from '@interfaces/services/IContributor'
+
+// ___ $ Services ___
+import getContributors from '@services/contributors'
+
+// ___ $ Request ___
+const data: any = await getContributors()
+---
+
+<ul class='contributors'>
+  {
+    data.map(({ login, avatar_url, html_url }: IContributor) => (
+      <Contributor login={login} avatar_url={avatar_url} html_url={html_url} />
+    ))
+  }
+</ul>
+
+<style>
+  .contributors {
+    max-width: 62rem;
+    max-height: 14rem;
+    width: max-content;
+
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 20px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 1rem;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+</style>

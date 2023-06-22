@@ -1,0 +1,579 @@
+---
+// ___ $ Astro Dependecies ___
+import { Prism } from '@astrojs/prism'
+
+// ___ $ Layouts ___
+import Layout from '@layouts/Layout.astro'
+
+// ___ $ Common Components ___
+import Stylesheet from '@common/Stylesheet.astro'
+import Container from '@common/Container.astro'
+
+// ___ $ Components ___
+import ReleaseContainer from '@components/Release/ReleaseContainer.astro'
+import ReleaseHead from '@components/Release/ReleaseHead.astro'
+import ReleaseDescription from '@components/Release/ReleaseDescription.astro'
+import RelevantText from '@components/RelevantText/RelevantText.astro'
+import Alert from '@components/Alert/Alert.astro'
+
+// ___ $ Data ___
+import sideBarData from '@data/Releases/SideBar/v1.0.0/class.data'
+---
+
+<Layout
+  windowTitle='Classes v1.0.0'
+  isSideBar={true}
+  data={sideBarData}
+  release='1.0.0'
+>
+  {/* Stylesheets */}
+  <Stylesheet path='themes/prism-light.css' slot='head' />
+
+  <Container isGradientBg={true}>
+    {/* Started */}
+    <ReleaseContainer id='Class'>
+      <ReleaseHead isTitle={true} text='Class' isGradient={true} />
+
+      <Alert
+        type='note'
+        message={`The precision and separators properties currently ` +
+          `do not have any functionality, you can skip the ` +
+          `use of both.`}
+      />
+    </ReleaseContainer>
+
+    {/* Class */}
+    <ReleaseContainer id='Currcash'>
+      <ReleaseHead
+        isTitle={false}
+        text='Currcash'
+        classElementType='class'
+        elementType='Class'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        The constructor method receiving a
+        <RelevantText>single</RelevantText>
+        argument is <RelevantText>optional</RelevantText>. An object with
+        <RelevantText>optional</RelevantText>
+        properties.
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`// Class instance\n` +
+          `\n// ES6\nimport { Currcash } from 'currcash';\n` +
+          `\n// Common\n// const { Currcash } = require('currcash');\n\n` +
+          `const curr = new Currcash({\n` +
+          `  value: 12,\n` +
+          `  precision: 2,\n` +
+          `  separators: ['.', '.']\n` +
+          `});`}
+      />
+    </ReleaseContainer>
+
+    {/* Error Class */}
+    <ReleaseContainer id='CurrcashError'>
+      <ReleaseHead
+        isTitle={false}
+        text='CurrcashError'
+        classElementType='class'
+        elementType='Class'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        The errors that are thrown are generic
+        <RelevantText>Error</RelevantText>. Objects whose message property
+        begins with
+        <RelevantText>"[CurrcashError]"</RelevantText>.
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`try {\n // code\n} ` +
+          `catch (err) {\n  if (err instanceof CurrcashError) {\n` +
+          `    // code\n  }\n}`}
+      />
+    </ReleaseContainer>
+
+    {/* About Properties */}
+    <ReleaseContainer id='AboutProperties'>
+      <ReleaseHead isTitle={false} text='About Properties' isGradient={false} />
+
+      <Alert
+        type='warning'
+        message={`Before continuing it is very important that ` +
+          `you consider the information about each of the ` +
+          `properties that are worked on the class.`}
+      />
+
+      <ReleaseDescription>
+        <div class='code_bg'>
+          <br />
+          <span class='gradient_text'>Value Property:</span>
+          <br />
+          <span class='gradient_text'>•</span>
+          Optional: <span class='gradient_text'>true</span>
+          <br />
+          <span class='gradient_text'>•</span>
+          Typeof: <RelevantText>Number</RelevantText>
+          <br />
+          <span class='gradient_text'>•</span> Default value:
+          <span class='gradient_text'>0</span>
+          <br />
+          <br />
+          <span class='gradient_text'>Precision Property:</span>
+          <br />
+          <span class='gradient_text'>•</span>
+          Optional: <span class='gradient_text'>true</span>
+          <br />
+          <span class='gradient_text'>•</span>
+          Typeof: <RelevantText>Number</RelevantText>
+          <br />
+          <span class='gradient_text'>•</span> Default value:
+          <span class='gradient_text'>-1</span>
+          <br />
+          <br />
+          <span class='gradient_text'>Separators Property:</span>
+          <br />
+          <span class='gradient_text'>•</span>
+          Optional: <span class='gradient_text'>true</span>
+          <br />
+          <span class='gradient_text'>•</span>
+          Typeof: <RelevantText>string[]</RelevantText>
+          <br />
+          <span class='gradient_text'>•</span> Default value:
+          <span class='gradient_text' style='letter-spacing: 5px'
+            >['.', ',']</span
+          >
+          <br />
+          <br />
+        </div>
+      </ReleaseDescription>
+    </ReleaseContainer>
+
+    {/* About Methods */}
+    <ReleaseContainer id='AboutMethods'>
+      <ReleaseHead isTitle={false} text='About Methods' isGradient={false} />
+
+      <Alert
+        type='tip'
+        message={`The class methods can be used as many ` +
+          `times as you want thanks to the chain of methods.` +
+          `Note that you can only do the chaining when invoking` +
+          `methods of mathematical operations.`}
+      />
+    </ReleaseContainer>
+
+    {/* Getters and Setters | Methods */}
+
+    {/* Getters */}
+    <ReleaseContainer id='Currcash.GetValue'>
+      <ReleaseHead
+        isTitle={false}
+        text='GetValue'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `console.log('Value:', curr.getValue()); // 0`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='Currcash.GetPrecision'>
+      <ReleaseHead
+        isTitle={false}
+        text='GetPrecision'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `console.log('Precision:', curr.getPrecision()); // -1`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='Currcash.GetSeparators'>
+      <ReleaseHead
+        isTitle={false}
+        text='GetSeparators'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; string[]</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `console.log(\n  'Separators:', curr.getSeparators()\n); ` +
+          `// ['.', ',']`
+        }
+      />
+    </ReleaseContainer>
+
+    {/* Setters */}
+    <ReleaseContainer id='Currcash.SetValue'>
+      <ReleaseHead
+        isTitle={false}
+        text='SetValue'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Param: Value
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; this</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `curr.setValue(20);`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='Currcash.SetPrecision'>
+      <ReleaseHead
+        isTitle={false}
+        text='SetPrecision'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Param: Precision
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; this</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `curr.setPrecision(4);`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='Currcash.SetSeparators'>
+      <ReleaseHead
+        isTitle={false}
+        text='SetSeparators'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Param: Separators
+          <span class='gradient_text'>{''}=&gt; string[]</span>
+        </code>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; this</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `curr.setSeparators(['', '.']);`}
+      />
+    </ReleaseContainer>
+
+    {/* Methods */}
+    <ReleaseContainer id='Currcash.Val'>
+      <ReleaseHead
+        isTitle={false}
+        text='Val'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `console.log('Value:', curr.val()); // 0`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='Currcash.Add'>
+      <ReleaseHead
+        isTitle={false}
+        text='Add'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Param: Value
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; this</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `curr.add(2).add(20).add(3).add(50).add(25);\n\n` +
+          `console.log('Total:', curr.val()); // 100`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='Currcash.Sub'>
+      <ReleaseHead
+        isTitle={false}
+        text='Sub'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Param: Value
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; this</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `curr.sub(800).sub(45).sub(23);\n\n` +
+          `console.log('Total:', curr.val()); // 732`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='Currcash.Multiply'>
+      <ReleaseHead
+        isTitle={false}
+        text='Multiply'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Param: Value
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; this</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `curr.multiply(64).multiply(8).multiply(2);\n\n` +
+          `console.log('Total:', curr.val()); // 1024`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='Currcash.DivideBy'>
+      <ReleaseHead
+        isTitle={false}
+        text='DivideBy'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Param: Value
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; this</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash();\n\n` +
+          `curr.divideBy(1024).divideBy(8).divideBy(4);\n\n` +
+          `console.log('Total:', curr.val()); // 32`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='Currcash.isInteger'>
+      <ReleaseHead
+        isTitle={false}
+        text='isInteger'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; bool</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash({\n  value: 1\n});\n\n` +
+          `console.log('1 is integer?:', curr.isInteger()); // true`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='Currcash.isDecimal'>
+      <ReleaseHead
+        isTitle={false}
+        text='isDecimal'
+        classElementType='method'
+        elementType='Class.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; bool</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const curr = new Currcash({\n  value: 3.1415\n});\n\n` +
+          `console.log('3.1415 is decimal?:', curr.isDecimal()); // true`}
+      />
+    </ReleaseContainer>
+
+    {/* Static Methods */}
+    <ReleaseContainer id='static.Currcash.isInteger'>
+      <ReleaseHead
+        isTitle={false}
+        text='Currcash.isInteger'
+        classElementType='static'
+        elementType='Static.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Param: Value
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; bool</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const myNumber = 1;\n\n` +
+          `console.log('1 is integer?:', Currcash.isInteger(myNumber)); // true`}
+      />
+    </ReleaseContainer>
+
+    <ReleaseContainer id='static.Currcash.isDecimal'>
+      <ReleaseHead
+        isTitle={false}
+        text='Currcash.isDecimal'
+        classElementType='static'
+        elementType='Static.Method()'
+        isGradient={false}
+      />
+
+      <ReleaseDescription>
+        <code class='code_bg'
+          >Param: Value
+          <span class='gradient_text'>{''}=&gt; number</span>
+        </code>
+        <code class='code_bg'
+          >Return
+          <span class='gradient_text'>{''}=&gt; bool</span>
+        </code>
+      </ReleaseDescription>
+
+      <Prism
+        lang='js'
+        code={`import { Currcash } from 'currcash';\n\n` +
+          `const myNumber = 3.1415;\n\n` +
+          `console.log('3.1415 is decimal?:', ` +
+          `Currcash.isDecimal(myNumber)); // true`}
+      />
+    </ReleaseContainer>
+  </Container>
+</Layout>

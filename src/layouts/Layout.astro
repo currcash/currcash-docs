@@ -1,0 +1,29 @@
+---
+// ___ $ Components ___
+import Main from '@components/Main/Main.astro'
+
+// ___ $ Layouts ___
+import Head from './Head.astro'
+import SideBarLayout from './SideBarLayout.astro'
+
+// ___ $ Interfaces ___
+import type ILayout from '@interfaces/layouts/ILayout'
+import type IHead from '@interfaces/layouts/IHead'
+
+// ___ $ Props ___
+export interface Props extends ILayout, IHead {}
+const { windowTitle, isSideBar, release, data } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <Head windowTitle={windowTitle}>
+    <slot name='head' />
+  </Head>
+  <body translate='yes'>
+    <Main>
+      {isSideBar && <SideBarLayout release={release} data={data ?? []} />}
+      <slot />
+    </Main>
+  </body>
+</html>

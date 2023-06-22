@@ -1,0 +1,20 @@
+---
+// ___ $ Components ___
+import SideBar from '@components/SideBar/SideBar.astro'
+
+// ___ $ Interfaces ___
+import type ISideBarLayout from '@interfaces/layouts/ISideBarLayout'
+import type IBrand from '@interfaces/components/SideBar/IBrand'
+
+// ___ $ Utilities ___
+import { existsArray } from '@utilities/funcs/existsArray'
+
+// ___ $ Props ___
+export interface Props extends ISideBarLayout, IBrand {}
+const { data, release } = Astro.props
+
+// ___ $ Simple Validation ___
+const isData = existsArray(data)
+---
+
+{isData && <SideBar release={release} data={data ?? []} />}

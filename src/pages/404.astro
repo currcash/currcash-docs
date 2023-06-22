@@ -1,0 +1,62 @@
+---
+/* ------------------------ *
+ *   --- $ Page: 404 ---    *
+ * ------------------------ */
+
+// ___ $ Common Components ___
+import Container from '@common/Container.astro'
+
+// ___ $ Layouts ___
+import Layout from '@layouts/Layout.astro'
+---
+
+<Layout isSideBar={false} windowTitle='Oops!'>
+  <Container isGradientBg={true}>
+    <main class='container'>
+      <h1 class='message'>
+        <span class='first_word'>Oops!</span>{' '}Page
+        <span class='d_block'>Not Found =/</span>
+      </h1>
+
+      <a class='link go_to_home' href='/' target='_self' draggable='false'
+        >Go to Home Page</a
+      >
+    </main>
+  </Container>
+</Layout>
+
+<style>
+  .d_block {
+    display: block;
+  }
+  .container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    gap: 1rem;
+  }
+  .message {
+    flex: 0 1;
+    text-align: center;
+    font-size: inherit;
+  }
+  .first_word {
+    color: var(--red);
+  }
+  .go_to_home {
+    width: max-content;
+    flex: 0 1;
+    padding: 0.5rem 0.8rem;
+    font-size: 1.2rem;
+    color: var(--dark);
+    border-radius: 10px;
+    border: 1.5px solid var(--dark);
+  }
+  .go_to_home:hover {
+    opacity: 1;
+  }
+</style>

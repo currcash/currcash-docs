@@ -1,0 +1,26 @@
+---
+// ___ $ Interfaces ___
+import type IHead from '@interfaces/layouts/IHead'
+
+// ___ $ Props ___
+export interface Props extends IHead {}
+const { windowTitle } = Astro.props
+---
+
+<head>
+  <meta charset='utf-8' />
+  <meta name='author' content='Currcash Organization' />
+  <meta name='description' content='Currcash Documentation' />
+  <meta name='viewport' content='width=device-width' />
+  <link rel='icon' type='image/svg+xml' href='/svg/logo.svg' />
+  <meta name='generator' content={Astro.generator} />
+  <title>{windowTitle} • Currcash</title>
+  {/* Stylesheets */}
+  <link rel='stylesheet' href='/stylesheets/base/modern-normalize.css' />
+  <link rel='stylesheet' href='/stylesheets/base/fonts.css' />
+  <link rel='stylesheet' href='/stylesheets/base/variables.css' />
+  <link rel='stylesheet' href='/stylesheets/base/custom-reset.css' />
+  <link rel='stylesheet' href='/stylesheets/utilities/gradients.css' />
+  <link rel='stylesheet' href='/stylesheets/layouts/layout.css' />
+  <slot />
+</head>

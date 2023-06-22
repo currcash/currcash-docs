@@ -1,0 +1,26 @@
+---
+// ___ $ Props ___
+export interface Props {
+  login: string
+  avatar_url: string
+}
+
+const { login, avatar_url } = Astro.props
+---
+
+{/** Avatar */}
+
+<img
+  src={avatar_url}
+  class='avatar'
+  alt={`${login}-avatar`}
+  draggable='false'
+/>
+
+<style>
+  .avatar {
+    width: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+</style>

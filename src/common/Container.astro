@@ -1,0 +1,22 @@
+---
+// ___ $ Interfaces ___
+import type IContainer from '@interfaces/common/IContainer'
+
+// ___ $ Props ___
+export interface Props extends IContainer {}
+const { isGradientBg } = Astro.props
+---
+
+<div class=`container ${isGradientBg ? 'gradient_bg' : ''}`>
+  <slot />
+</div>
+
+<style>
+  .container {
+    flex: 1;
+    height: 100vh;
+    padding: 1.5rem 2.5rem 1.2rem 2.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+</style>

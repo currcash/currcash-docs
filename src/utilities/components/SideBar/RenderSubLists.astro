@@ -1,0 +1,23 @@
+---
+// ___ $ Components ___
+import SideBarList from '@components/SideBar/SideBarList.astro'
+import RenderElements from './RenderElements.astro'
+
+// ___ $ Interfaces ___
+import type IList from '@interfaces/components/SideBar/IList'
+
+// ___ $ Props ___
+export interface Props {
+  sublists: IList[]
+}
+
+const { sublists } = Astro.props
+---
+
+{
+  sublists.map(({ title, isOpen, elements }: IList) => (
+    <SideBarList title={title} isOpen={isOpen}>
+      <RenderElements elements={elements ?? []} />
+    </SideBarList>
+  ))
+}

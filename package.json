@@ -1,0 +1,28 @@
+{
+  "name": "currcash-docs",
+  "version": "1.0.0",
+  "description": "Documentation",
+  "type": "module",
+  "homepage: "https://currcashdocs.surge.sh/",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "pretty": "prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/preact": "2.2.1",
+    "@astrojs/prism": "2.1.2",
+    "@theme-ui/prism": "0.16.0",
+    "astro": "2.5.6",
+    "preact": "10.6.5"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "prettier-plugin-astro": "^0.10.0",
+    "typescript": "^5.1.3"
+  }
+}

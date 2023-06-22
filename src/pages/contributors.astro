@@ -1,0 +1,24 @@
+---
+/* -------------------------------- *
+ *   --- $ Page: Contributors ---   *
+ * -------------------------------- */
+
+// ___ $ Layouts ___
+import Layout from '@layouts/Layout.astro'
+
+// ___ $ Common Components ___
+import Container from '@common/Container.astro'
+
+// ___ $ Data ___
+import sideBarData from '@data/Main/SideBar/main.data'
+
+// ___ $ Utilities ___
+import GhContributors from '@components/Contributor/GhContributors.astro'
+---
+
+<Layout isSideBar={true} windowTitle='Contributors' data={sideBarData}>
+  <Container isGradientBg={true}>
+    <h1 class='global_title gradient_text'>Contributors to our organization</h1>
+    <GhContributors />
+  </Container>
+</Layout>
