@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Documentation",
   "type": "module",
-  "homepage: "https://currcashdocs.surge.sh/",
+  "homepage": "https://currcashdocs.surge.sh/",
   "license": "MIT",
   "scripts": {
     "dev": "astro dev",

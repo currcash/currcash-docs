@@ -14,7 +14,7 @@ export const lastData: IList[] = [
   {
     title: 'GitHub Repository',
     link: {
-      endpoint: 'https://github.com/currcash',
+      endpoint: 'https://github.com/currcash/currcash/',
       target: '_blank'
     },
     isOpen: false,
