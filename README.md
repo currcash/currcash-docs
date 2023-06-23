@@ -2,43 +2,31 @@
 
 <a href="https://github.com/currcash/currcash" target="_blank">Currcash</a> Documentation
 
-## Homepage
-
-```sh
-https://currcashdocs.surge.sh/
-```
+### [Homepage](https://currcashdocs.surge.sh/)
 
 ## Tools
 
-<div
-  style="
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center
-  "
->
-  <img
-    src="https://astro.build/favicon.svg"
-    height="64px"
-    width="64px"
-    alt="Astro"
-  />
+<img
+  src="https://astro.build/favicon.svg"
+  height="64px"
+  width="64px"
+  alt="Astro"
+/>
 
-  <img
-    src="https://www.typescriptlang.org/icons/icon-144x144.png?v=8944a05a8b601855de116c8a56d3b3ae"
-    height="64px"
-    width="64px"
-    alt="TypeScript"
-  />
+<img
+  src="https://www.typescriptlang.org/icons/icon-144x144.png?v=8944a05a8b601855de116c8a56d3b3ae"
+  height="64px"
+  width="64px"
+  alt="TypeScript"
+/>
 
-  <img
-    src="https://preactjs.com/assets/app-icon.png"
-    height="64px"
-    width="64px"
-    alt="Preact"
-  />
-</div>
+<img
+  src="https://preactjs.com/assets/app-icon.png"
+  height="64px"
+  width="64px"
+  alt="Preact"
+/>
+
 
 ## Basics Template
 
