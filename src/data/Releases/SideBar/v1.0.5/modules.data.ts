@@ -1,7 +1,7 @@
-import type IList from '../../../../interfaces/components/SideBar/IList'
+import type IList from '@interfaces/components/SideBar/IList'
 
 // ___ $ Data ___
-import { lastData } from '../../../Main/SideBar/last.data'
+import { lastData } from '@data/Main/SideBar/last.data'
 
 const sideBarData: IList[] = [
   {
@@ -23,17 +23,17 @@ const sideBarData: IList[] = [
     elements: null,
     sublists: [
       {
-        title: 'v1.0.0',
+        title: 'v1.0.5',
         isOpen: true,
         link: null,
         sublists: null,
         elements: [
           {
-            endpoint: '/releases/v1.0.0/class',
+            endpoint: '/releases/v1.0.5/class',
             title: 'Class'
           },
           {
-            endpoint: '/releases/v1.0.0/modules',
+            endpoint: '/releases/v1.0.5/modules',
             title: 'Modules'
           }
         ]

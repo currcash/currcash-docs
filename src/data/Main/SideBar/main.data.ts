@@ -23,17 +23,17 @@ const sideBarData: IList[] = [
     elements: null,
     sublists: [
       {
-        title: 'v1.0.0',
+        title: 'v1.0.5',
         isOpen: false,
         link: null,
         sublists: null,
         elements: [
           {
-            endpoint: '/releases/v1.0.0/class',
+            endpoint: '/releases/v1.0.5/class',
             title: 'Class'
           },
           {
-            endpoint: '/releases/v1.0.0/modules',
+            endpoint: '/releases/v1.0.5/modules',
             title: 'Modules'
           }
         ]
